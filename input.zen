@@ -1,0 +1,7 @@
+# This is a zenyth file named "input.zen"
+import zen.std
+
+fun main() {
+    let result = 10 + 10
+    println(result)
+}
