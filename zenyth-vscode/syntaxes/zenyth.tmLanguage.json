@@ -1,0 +1,101 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Zenyth",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#decorators"
+		}
+		
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.zenyth",
+				"match": "\\b(if|else|while|for|return|break|continue|true|false|let|const|fun|struct|enum|match|switch|use|try)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.zenyth",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.zenyth",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.hashtag.zenyth",
+					"match": "#.*$"
+				},
+				{
+					"name": "comment.block.zenyth",
+					"begin": "##*",
+					"end": "##*/"
+				}
+			]
+		},
+		"numbers": {
+			"name": "constant.numeric.zenyth",
+			"match": "\\b([0-9]+(_[0-9]+)*(\\.([0-9]+(_[0-9]+)*)?)?|\\.([0-9]+(_[0-9]+)*)?)([eE][+-]?[0-9]+(_[0-9]+)*)?\\b"
+		},
+		"functions": {
+			"patterns": [
+				{
+					"name": "entity.name.function.zenyth",
+					"match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\("
+				}
+			]
+		},
+		"types": {
+			"patterns": [
+				{
+					"name": "storage.type.zenyth",
+					"match": "\\b(i32|i64|f32|f64|bool|char|string)\\b"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.zenyth",
+					"match": "\\+|-|\\*|/|%|==|!=|<|>|<=|>=|&&|\\|\\||!"
+				}
+			]
+		},
+		"decorators": {
+			"patterns": [
+				{
+					"name": "keyword.decorator.zenyth",
+					"match": "\\@[a-zA-Z_][a-zA-Z0-9_]*"
+				}
+			]
+		}
+	},
+	"scopeName": "source.zen"
+}
+

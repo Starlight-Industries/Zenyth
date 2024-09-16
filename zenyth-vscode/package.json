@@ -1,0 +1,25 @@
+{
+  "name": "zenyth-vscode",
+  "displayName": "Zenyth-VSCode",
+  "description": "Experimental language support for the equally as experimental language ZENYTH",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "1.92.2"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "zenyth",
+      "aliases": ["Zenyth", "zenyth"],
+      "extensions": [".zenyth",".zen",".z",".zynth"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "zenyth",
+      "scopeName": "source.zen",
+      "path": "./syntaxes/zenyth.tmLanguage.json"
+    }]
+  }
+}
